@@ -1,0 +1,13 @@
+{
+  "name": "on-the-line",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Draw one line. Don't cross it. Get hung.",
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --no-warnings server/server.js",
+    "dev": "node --no-warnings --watch server/server.js",
+    "test": "node --no-warnings --test test/*.test.js"
+  }
+}
