@@ -1,1 +1,80 @@
-<!doctype html><title>x</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>On the Line</title>
+<meta name="description" content="Draw one line. Never cross it. The best painting of the day is hung on the wall for everyone to see.">
+<meta name="theme-color" content="#3a1310">
+<meta property="og:title" content="On the Line">
+<meta property="og:description" content="Draw one line. Never cross it. Get hung.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="room">
+  <div class="wordmark" aria-hidden="true"><span>ON</span><span>THE</span><span>LINE</span></div>
+
+  <header class="topbar">
+    <button class="brand" data-go="foyer" aria-label="On the Line — home">On the Line</button>
+    <nav>
+      <button data-go="wall">The Wall</button>
+      <button data-go="collection">Collection</button>
+      <button id="mute" aria-label="Toggle sound">♪ on</button>
+    </nav>
+  </header>
+
+  <!-- The gallery: one framed sheet and its label. Foyer, play and results
+       all happen here so the painting never leaves the wall. -->
+  <main id="gallery" class="screen">
+    <div class="hang">
+      <div class="lamp" aria-hidden="true"></div>
+      <figure class="frame" id="frame">
+        <canvas id="stage" aria-label="The sheet of paper you draw on"></canvas>
+        <div class="overlay" id="overlay"></div>
+        <div class="hud" id="hud" hidden>
+          <span class="hud-score" id="hudScore">0</span>
+          <span class="hud-mult" id="hudMult">×1.00</span>
+        </div>
+      </figure>
+    </div>
+    <aside class="placard" id="placard" aria-live="polite"></aside>
+  </main>
+
+  <section id="wallScreen" class="screen" hidden>
+    <header class="wall-head">
+      <h1 id="wallTitle">The Wall</h1>
+      <p id="wallSub" class="sub"></p>
+      <div class="tabs" role="tablist">
+        <button role="tab" data-day="0" aria-selected="true">Today</button>
+        <button role="tab" data-day="-1">Yesterday</button>
+      </div>
+    </header>
+    <div id="salon" class="salon"></div>
+  </section>
+
+  <section id="collectionScreen" class="screen" hidden>
+    <header class="wall-head">
+      <h1>The Permanent Collection</h1>
+      <p class="sub">Every day, one painting is kept forever: the Masterpiece of its exhibition. These are they.</p>
+    </header>
+    <div id="collectionGrid" class="salon collection"></div>
+  </section>
+
+  <dialog id="viewer">
+    <div class="viewer-inner">
+      <figure class="frame small-frame"><canvas id="viewerCanvas"></canvas></figure>
+      <div class="placard" id="viewerPlacard"></div>
+      <button class="close" data-close aria-label="Close">×</button>
+    </div>
+  </dialog>
+</div>
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>

@@ -72,7 +72,7 @@ export function rng(seed) {
 
 // --- inks ------------------------------------------------------------------
 // Indices into the riso ink palette (renderer owns the actual colours).
-export const INK_COUNT = 6;
+export const INK_COUNT = 3;
 
 // --- the world ---------------------------------------------------------------
 export function dailySeed(dateStr) {
@@ -204,7 +204,7 @@ function spawnPigment(w) {
     const hdy = y - w.y;
     if (hdx * hdx + hdy * hdy < 140 * 140) continue;
     if (!clearance(w, x, y, PIG_R)) continue;
-    w.pigs.push({ x, y, ink: 1 + Math.floor(w.r() * (INK_COUNT - 1)), born: w.tick });
+    w.pigs.push({ x, y, ink: Math.floor(w.r() * INK_COUNT), born: w.tick });
     return;
   }
   // No room anywhere: the page is nearly full. No pigment this time.

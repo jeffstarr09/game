@@ -1,0 +1,10 @@
+{
+  "name": "On the Line",
+  "short_name": "On the Line",
+  "description": "Draw one line. Never cross it. Get hung.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#3a1310",
+  "theme_color": "#3a1310",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
